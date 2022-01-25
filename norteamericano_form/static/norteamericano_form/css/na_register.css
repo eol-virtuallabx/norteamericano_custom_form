@@ -1,0 +1,102 @@
+div#register-form ul.message-copy{
+    display:none !important;
+}
+div#register-form div.submission-error:after{
+    content:'Por favor revisa los errores';
+}
+#register-na_birth_date-validation-error-msg.error_na_invalid:after{
+    content:'Por favor ingrese una fecha valida en el formato indicado.';
+}
+.login-register .form-field label.na_error,.login-register .form-field label.success.na_error{
+    color: #b20610 !important;
+}
+.login-register .form-field input.na_error,.login-register .form-field input.success.na_error{
+    border-color: #b20610 !important;
+}
+form#register.register-form{
+    padding-bottom:20px;
+}
+form#register.register-form:after{
+    content:'(*) Campos obligatorios';
+    margin-top:20px;
+    color:red;
+}
+#register-form div.form-field.text-name, #register-form div.form-field.checkbox-optional_fields_toggle{
+    display: none !important;
+}
+.login-register .form-field label.focus-in,.login-register .form-field label.focus-out{
+    position:relative;
+    padding-top: 5px;
+    padding-left: 2px;
+    opacity: 1;
+    z-index: 1;
+    padding-bottom: 3px;
+}
+
+.login-register .form-field label span.icon.fa.fa-exclamation,.login-register .form-field label span.icon.fa.success.fa-check{
+    display:none !important;
+}
+.login-register .form-field label.success span.label-text{
+    color: rgb(0, 0, 0) !important;
+}
+.login-register .form-field input.success{
+    border-color:#c8c8c8 !important;
+}
+.login-register .form-field select.success{
+    outline-color: #c8c8c8 !important;
+}
+.login-register .form-field label span.label-required,.login-register .form-field label span.label-required.hidden{
+    visibility: hidden;
+    display:inline-block !important;
+}
+.login-register .form-field label span.label-required:before,.login-register .form-field label span.label-required.hidden:before{
+    content:'*';
+    color: red!important;
+    vertical-align: unset!important;
+    visibility: visible;
+}
+.login-register .form-field span.tip.tip-input,.login-register .form-field span.tip.tip-input.hidden{
+    display:block !important;
+    visibility:visible !important;
+}
+.login-register .form-field span.tip.error,.login-register .form-field span.tip.tip.error.hidden{
+    display:block !important;
+    visibility:visible !important;
+}
+
+
+#register-form .form-field.text-na_firstname,#register-form .form-field.text-na_rut,#register-form .form-field.text-na_part_address,#register-form .form-field.text-na_lab_address,#register-form .form-field.select-na_work,#register-form .form-field.text-na_lab_lugar{
+    padding-top:36px;
+    border-top: 1px solid gray;
+    margin-top: 36px;
+}
+
+.login-register .form-type{
+    margin: 0 auto !important;
+}
+#register-anchor{
+    max-width: 80%;
+}
+
+.form-field.text-na_firstname:before{
+    content:'Información Personal';
+    margin-top:60px;
+    font-size: 24px;
+    font-weight: 700;
+    color:black;
+}
+label[for=register-na_rut]{
+    margin-top:20px;
+}
+.na_show_field{
+    display:block !important;
+}
+#register-na_rut-validation-error-msg.error_na_invalid:after {
+  content: 'Por favor ingrese un RUT valido.'; 
+}
+.na_show_alert{
+	color: #b20610 !important;
+}
+.action.action-primary.action-update.js-register.register-button{
+    display: none !important;
+}

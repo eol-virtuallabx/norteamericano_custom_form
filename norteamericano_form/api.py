@@ -15,14 +15,12 @@ import requests
 
 log = logging.getLogger(__name__)
 
-def validate_rut(request,rut):
+def validate_rut(request, rut):
     try:
         if not request.method == 'GET':
+            log.error('Wrong Method')
             return HttpResponseNotFound()
-        if rut_exists(rut):
-            return JsonResponse({'result': False, 'exists_rut': True})
-        
-        return JsonResponse({'result':True if result == '100' else False, 'exists_rut': False})
+        return JsonResponse({'exists_rut': rut_exists(rut)})
     except Exception as e:
         log.error(str(e))
         return HttpResponseBadRequest(u'Ha ocurrido un error')
@@ -31,8 +29,9 @@ def rut_exists(na_rut):
     """
         Verify if na_rut exists in NAExtraInfo model
     """
-    aux_rut = na_rut[:-1]
-    rut_dv = na_rut[-1].upper()
-    rut = re.sub(r'(?<!^)(?=(\d{3})+$)', r'.', aux_rut)
-    rut = "{}-{}".format(rut, rut_dv)
+    rut = na_rut.upper()
+    if na_rut[0] != 'P':
+        aux_rut = na_rut[:-1]
+        rut_dv = na_rut[-1].upper()
+        rut = "{}-{}".format(aux_rut, rut_dv)
     return NAExtraInfo.objects.filter(na_rut=rut).exists()

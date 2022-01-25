@@ -14,8 +14,9 @@ class NAExtraInfo(models.Model):
     """
 
     user = models.OneToOneField(USER_MODEL, null=True,on_delete=models.DO_NOTHING,)
-    na_firstname = models.CharField(verbose_name=u'Nombres',max_length=100)
-    na_lastname = models.CharField(verbose_name=u'Apellidos',max_length=100)
-    na_rut = models.CharField(verbose_name=u'RUT',max_length=12)
-    na_birth_date = models.CharField(verbose_name=u'Fecha Nacimiento',max_length=10,help_text=u'Formato DD/MM/AAAA')
-    na_phone = models.CharField(verbose_name=u'Teléfono',max_length=30)
+    na_names = models.CharField(verbose_name=u'Nombres',max_length=100, default='')
+    na_lastname_p = models.CharField(verbose_name=u'Apellido Paterno',max_length=100, default='')
+    na_lastname_m = models.CharField(verbose_name=u'Apellido Materno',max_length=100, default='')
+    na_rut = models.CharField(verbose_name=u'RUT/Pasaporte',max_length=21, unique=True, default='', help_text=u'Si es Pasaporte ingrese una P al inicio')
+    na_birth_date = models.CharField(verbose_name=u'Fecha Nacimiento',max_length=10,help_text=u'Formato DD/MM/AAAA', default='')
+    na_phone = models.CharField(verbose_name=u'Teléfono',max_length=30, default='')

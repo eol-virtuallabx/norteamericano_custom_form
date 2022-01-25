@@ -8,14 +8,17 @@ class NACustomForm(ModelForm):
     """
     def __init__(self, *args, **kwargs):
         super(NACustomForm, self).__init__(*args, **kwargs)
-        self.fields['na_firstname'].error_messages = {
+        self.fields['na_names'].error_messages = {
             "required": u"Por favor ingresa Nombres.",
         }
-        self.fields['na_lastname'].error_messages = {
-            "required": u"Por favor ingresa Apellidos.",
+        self.fields['na_lastname_p'].error_messages = {
+            "required": u"Por favor ingresa Apellido Paterno.",
+        }
+        self.fields['na_lastname_m'].error_messages = {
+            "required": u"Por favor ingresa Apellido Materno.",
         }
         self.fields['na_rut'].error_messages = {
-            "required": u"Por favor ingresa RUT.",
+            "required": u"Por favor ingresa RUT o Pasaporte.",
         }
         self.fields['na_birth_date'].error_messages = {
             "required": u"Por favor ingresa Fecha Nacimiento.",
@@ -27,5 +30,5 @@ class NACustomForm(ModelForm):
 
     class Meta(object):
         model = NAExtraInfo
-        fields = ('na_rut','na_firstname','na_lastname','na_birth_date','na_phone',)
+        fields = ('na_rut','na_names','na_lastname_p','na_lastname_m','na_birth_date','na_phone',)
 
