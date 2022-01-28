@@ -31,6 +31,9 @@ setup(
     entry_points={
         "lms.djangoapp": [
             "norteamericano_form = norteamericano_form.apps:NorteamericanoCustomFormConfig",
+        ],
+        "cms.djangoapp": [
+            "norteamericano_form = norteamericano_form.apps:NorteamericanoCustomFormConfig",
         ]
     },
     package_data=package_data("norteamericano_form", ["static", "public"]),
