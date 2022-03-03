@@ -12,7 +12,11 @@ class NAExtraInfo(models.Model):
     This model contains extra fields that will be saved when a user registers.
     The form that wraps this model is in the forms.py file.
     """
-
+    class Meta:
+        permissions = [
+            ("na_instructor_staff",
+             "instructor can enroll users and rerun courses"),
+        ]
     user = models.OneToOneField(USER_MODEL, null=True,on_delete=models.DO_NOTHING,)
     na_names = models.CharField(verbose_name=u'Nombres',max_length=100, default='')
     na_lastname_p = models.CharField(verbose_name=u'Apellido Paterno',max_length=100, default='')
